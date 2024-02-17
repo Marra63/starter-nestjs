@@ -204,10 +204,9 @@ export class AppService {
         }).indexOf(token);
 
         //если есть все неоюхожимые параметры, то вохвращается UUID
-        if (index !== -1 && body.origin_details && Array.isArray(body.delivery_details) && body.package_details &&
+        if (index !== -1 && body.origin_details && Array.isArray(body.delivery_details) && body.package_details && body.delivery_details.length!=0 &&
             body.origin_details.address != "" && body.origin_details.country != "" && body.origin_details.phone != "" &&
-            body.delivery_details.address != "" && body.delivery_details.country != "" && body.delivery_details.phone != "" &&
-            Number(body.package_details.weight) && body.package_details.items != "" && Number(body.package_details.price)
+            Number(body.package_details.weight) && body.package_details.items != "" && Number(body.package_details.price
 
         ) {
             let uuid = "R-" + uuidv4()
