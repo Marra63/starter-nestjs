@@ -1,23 +1,27 @@
-import {Body, Controller, Get, Post, Put, Query, Headers, Delete, Req} from '@nestjs/common';
+import { Body, Controller, Get, Post, Put, Query, Headers, Delete, Req } from '@nestjs/common';
 import { AppService } from './app.service';
-import {ApiBody, ApiParam, ApiQuery, ApiTags, ApiOperation} from "@nestjs/swagger";
-import { Request } from 'express';
+import { ApiBody, ApiParam, ApiQuery, ApiTags, ApiOperation } from "@nestjs/swagger";
+// import { Request } from 'express';
+// import io,{Socket} from "socket.io-client";
+// import WebSocket from "ws";
+// import { WsException } from '@nestjs/websockets';
 
 
 @ApiTags("Профессионалы")
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
+  
 
-  // @Get()
-  // getHello(): string {
-  //   return this.appService.getHello();
-  // }
+  @Get()
+  getHello(): string {
+    return "this.appService.getHello();"
+  }
 
-  // @Get("/getAll")
-  // getAll():string{
-  //   return this.appService.getAll();
-  // }
+  @Get("/getAll")
+  getAll(): string {
+    return this.appService.getAll();
+  }
 
 
   @ApiBody({
@@ -37,7 +41,7 @@ export class AppController {
   })
   @ApiOperation({ summary: 'авторизация пользователя' })
   @Post("/signIn")
-  checkPassword(@Body() body: any):any{
+  checkPassword(@Body() body: any): any {
     //console.log(params)
     return this.appService.checkPassword(body);
   }
@@ -61,13 +65,13 @@ export class AppController {
   })
   @ApiOperation({ summary: 'авторизация пользователя гугл' })
   @Post("/googleAuth")
-  googleAuth(@Body() params: any):any{
+  googleAuth(@Body() params: any): any {
     //console.log(params)
     var regexp = new RegExp('gmail')
-    if(regexp.test(params.email))
+    if (regexp.test(params.email))
       return this.appService.checkPassword(params);
     else
-      return {"message":"fail email"}
+      return { "message": "fail email" }
   }
 
 
@@ -96,7 +100,7 @@ export class AppController {
     }
   })
   @Post("/signUp")
-  postUser(@Body() body:any){
+  postUser(@Body() body: any) {
     return this.appService.postUser(body)
   }
 
@@ -125,17 +129,17 @@ export class AppController {
     }
   })
   @Post("/signUpGoogle")
-  postUserGoogle(@Body() body:any){
+  postUserGoogle(@Body() body: any) {
     var regexp = new RegExp('gmail')
-    if(regexp.test(body.email))
+    if (regexp.test(body.email))
       return this.appService.postUser(body)
     else
-      return {"message":"fail email"}
-    }
+      return { "message": "fail email" }
+  }
 
   @ApiOperation({ summary: 'выход из аккаунта' })
   @Post("/logOut")
-  logOut(@Headers('token')token: string){
+  logOut(@Headers('token') token: string) {
     return this.appService.postLogOut(token)
   }
 
@@ -153,8 +157,8 @@ export class AppController {
     }
   })
   @Post("/getValidCode")
-  getValidCode(@Body() params: any):any{
-    return this.appService.getValidCode( params)
+  getValidCode(@Body() params: any): any {
+    return this.appService.getValidCode(params)
   }
 
   // @ApiOperation({ summary: 'получение кода валидации по почте повторно' })
@@ -172,21 +176,21 @@ export class AppController {
   @ApiOperation({ summary: 'проверка кода валидации' })
   @ApiQuery({
     name: "valid_code",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @ApiQuery({
     name: "email",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @Get("/checkValidCode")
-  checkValidCode(@Query() params:any):any{
+  checkValidCode(@Query() params: any): any {
     return this.appService.checkValidCode(params)
   }
 
 
- @ApiOperation({ summary: 'запрос на изменение пароля' })
+  @ApiOperation({ summary: 'запрос на изменение пароля' })
 
   @ApiBody({
     schema: {
@@ -200,40 +204,40 @@ export class AppController {
           type: 'string',
           description: 'password'
         },
-        valid_code:{
-          type:'number',
-          description:"valid code"
+        valid_code: {
+          type: 'number',
+          description: "valid code"
         }
       }
     }
   })
   @Put("/changePassword")
-  changePassword(@Query() body:any):any{
-      return this.appService.changePassword(body)
+  changePassword(@Query() body: any): any {
+    return this.appService.changePassword(body)
   }
 
-@ApiOperation({ summary: 'запрос на получение баланса пользователя' })
+  @ApiOperation({ summary: 'запрос на получение баланса пользователя' })
   @Get("/getBalance")
-  getBalance(@Query() params:any,  @Headers('token') token: string):any{
+  getBalance(@Query() params: any, @Headers('token') token: string): any {
     return this.appService.getBalance(token)
   }
 
-@ApiOperation({ summary: 'запрос на добавление заказа' })
+  @ApiOperation({ summary: 'запрос на добавление заказа' })
   @ApiBody({
     schema: {
       type: 'object',
       properties: {
         origin_details: {
           type: "object",
-          properties:{
-            address:{
-              type:"string"
+          properties: {
+            address: {
+              type: "string"
             },
-            country:{
-              type:"string"
+            country: {
+              type: "string"
             },
-            phone:{
-              type:"string"
+            phone: {
+              type: "string"
             },
 
           },
@@ -241,35 +245,35 @@ export class AppController {
         },
         delivery_details: {
           type: 'array',
-          items:{
-            type:"object",
-            properties:{
-              address:{
-                type:"string"
+          items: {
+            type: "object",
+            properties: {
+              address: {
+                type: "string"
               },
-              country:{
-                type:"string"
+              country: {
+                type: "string"
               },
-              phone:{
-                type:"string"
+              phone: {
+                type: "string"
               },
-  
+
             }
           },
-          
+
           description: 'delivery_details'
         },
         package_details: {
-          type: `object`       ,
-          properties:{
-            items:{
-              type:"string"
+          type: `object`,
+          properties: {
+            items: {
+              type: "string"
             },
-            weight:{
-              type:"number"
+            weight: {
+              type: "number"
             },
-            price:{
-              type:"number"
+            price: {
+              type: "number"
             },
 
           },
@@ -280,70 +284,70 @@ export class AppController {
   })
 
   @Post("/sendPackage")
-  postPackage(@Body() body:any,  @Headers('token')token: string):any{
+  postPackage(@Body() body: any, @Headers('token') token: string): any {
     return this.appService.postPackage(body, token)
   }
 
 
-// @ApiOperation({ summary: 'запрос на оплату заказа' })
-//   @ApiQuery({
-//     name: "uuid",
-//     type:"string",
-//     required:true
-//   })
-//   @ApiQuery({
-//     name: "price",
-//     type:"number",
-//     required:true
-//   })
-//   @ApiBody({
-//     schema:{
-//       type:"object",
-//       properties:{
-//         charges: {
-//           type:"object",
-//           properties:{
-//             delivery:{
-//               type:"number"
-//             },
-//             tax_and_service:{
-//               type:"number"
-//             },
-//             instant_delivery:{
-//               type:"number"
-//             },
-//           }
-//         }
-//       }
-//     }
-//   })
-//   @Post("/makePayment")
-//   makePayment(@Query() params:any,  @Headers('token')token: string, @Body() body:any):any{
-//     return this.appService.makePayment(params, token, body)
-//   }
+  // @ApiOperation({ summary: 'запрос на оплату заказа' })
+  //   @ApiQuery({
+  //     name: "uuid",
+  //     type:"string",
+  //     required:true
+  //   })
+  //   @ApiQuery({
+  //     name: "price",
+  //     type:"number",
+  //     required:true
+  //   })
+  //   @ApiBody({
+  //     schema:{
+  //       type:"object",
+  //       properties:{
+  //         charges: {
+  //           type:"object",
+  //           properties:{
+  //             delivery:{
+  //               type:"number"
+  //             },
+  //             tax_and_service:{
+  //               type:"number"
+  //             },
+  //             instant_delivery:{
+  //               type:"number"
+  //             },
+  //           }
+  //         }
+  //       }
+  //     }
+  //   })
+  //   @Post("/makePayment")
+  //   makePayment(@Query() params:any,  @Headers('token')token: string, @Body() body:any):any{
+  //     return this.appService.makePayment(params, token, body)
+  //   }
 
 
-@ApiOperation({ summary: 'запрос на получение последнего uuid' })
-@Get("/getLastUUID")
-getLastUUID(@Headers('token') token: string):any{
-  return this.appService.getLastUUID(token)
-}  
+  @ApiOperation({ summary: 'запрос на получение последнего uuid' })
+  @Get("/getLastUUID")
+  getLastUUID(@Headers('token') token: string): any {
+    return this.appService.getLastUUID(token)
+  }
 
   @ApiOperation({ summary: 'запрос на получение истории операций' })
   @Get("/getHistoryOfOperations")
-  getHistoryOfOperations(@Query() params:any,  @Headers('token') token: string):any{
+  getHistoryOfOperations(@Query() params: any, @Headers('token') token: string): any {
     return this.appService.getHistoryOfOperations(token)
   }
 
 
-@ApiOperation({ summary: 'запрос на пополнение баланса' })
+  @ApiOperation({ summary: 'запрос на пополнение баланса' })
   @ApiQuery({
     name: "price",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @Post("/addMoney")
-  addMoney(@Query() params:any,  @Headers('token') token: string):any{
+  addMoney(@Query() params: any, @Headers('token') token: string): any {
     return this.appService.addMoney(params, token)
   }
 
@@ -351,32 +355,32 @@ getLastUUID(@Headers('token') token: string):any{
   @ApiOperation({ summary: 'запрос на изменение статуса заказа' })
   @ApiQuery({
     name: "uuid",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @ApiQuery({
     name: "state_value",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
-    @ApiQuery({
+  @ApiQuery({
     name: "state",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @Post("/postPackageState")
-  postPackageState(@Query() params:any,  @Headers('token') token: string):any{
+  postPackageState(@Query() params: any, @Headers('token') token: string): any {
     return this.appService.postPackageState(params, token)
   }
 
-  @ApiOperation({ summary: 'запрос на получение данных о сборах заказа'})
+  @ApiOperation({ summary: 'запрос на получение данных о сборах заказа' })
   @ApiQuery({
     name: "uuid",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @Get("/getCharges")
-  getCharges(@Query() params:any,  @Headers('token') token: string):any{
+  getCharges(@Query() params: any, @Headers('token') token: string): any {
     return this.appService.getCharges(params, token)
   }
 
@@ -384,99 +388,99 @@ getLastUUID(@Headers('token') token: string):any{
   @ApiOperation({ summary: 'запрос на получение данных о заказе' })
   @ApiQuery({
     name: "uuid",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @Get("/getPackageData")
-  getPackageData(@Query() params:any,  @Headers('token') token: string):any{
+  getPackageData(@Query() params: any, @Headers('token') token: string): any {
     return this.appService.getPackageData(params, token)
   }
 
-      @ApiOperation({ summary: 'запрос на получение всех заказов пользователя' })
+  @ApiOperation({ summary: 'запрос на получение всех заказов пользователя' })
   @Get("/getAllPackages")
-  getAllPackages( @Headers('token') token: string):any{
-    return this.appService.getAllPackages( token)
+  getAllPackages(@Headers('token') token: string): any {
+    return this.appService.getAllPackages(token)
   }
 
   @ApiOperation({ summary: 'запрос для публикации отзыва' })
   @ApiQuery({
     name: "uuid",
-    type:"string",
-    required:true
+    type: "string",
+    required: true
   })
   @ApiBody({
-    schema:{
-      type:"object",
-      properties:{
-        score:{
-          type:"number"
+    schema: {
+      type: "object",
+      properties: {
+        score: {
+          type: "number"
         },
-        feedback:{
-          type:"string"
+        feedback: {
+          type: "string"
         }
       }
     }
   })
   @Post("/postFeedback")
-  postFeedback(@Body() body:any,  @Headers('token')token: string, @Query() params:any,):any{
+  postFeedback(@Body() body: any, @Headers('token') token: string, @Query() params: any,): any {
     return this.appService.postFeedback(body, token, params)
   }
 
-/*  @ApiOperation({ summary: 'запрос для получения данных о доставщике' })
-  @Get("/getDeliverymen")
-  getDeliverymen(@Headers('token') token: string):any{
-    return this.appService.getDeliverymen( token)
-  }
-*/
-/*
-  @ApiOperation({ summary: 'запрос для добавления сообщения' })
-  @ApiQuery({
-    name: "uuid",
-    type:"string",
-    required:true
-  })
-
-  @ApiBody({
-    schema:{
-      type:"object",
-      properties:{
-        message:{
-          type:"string"
-        }
-      }
-
+  /*  @ApiOperation({ summary: 'запрос для получения данных о доставщике' })
+    @Get("/getDeliverymen")
+    getDeliverymen(@Headers('token') token: string):any{
+      return this.appService.getDeliverymen( token)
     }
-  })
- @Post("/postMessage")
-  postMessage(@Query() params:any,  @Headers('token') token: string, @Body() body:any,):any{
-    return this.appService.postMessage(params, token, body)
-  }
-*/
-  @ApiOperation({ summary: 'запрос для получения данных о пользователе'})
+  */
+  /*
+    @ApiOperation({ summary: 'запрос для добавления сообщения' })
+    @ApiQuery({
+      name: "uuid",
+      type:"string",
+      required:true
+    })
+  
+    @ApiBody({
+      schema:{
+        type:"object",
+        properties:{
+          message:{
+            type:"string"
+          }
+        }
+  
+      }
+    })
+   @Post("/postMessage")
+    postMessage(@Query() params:any,  @Headers('token') token: string, @Body() body:any,):any{
+      return this.appService.postMessage(params, token, body)
+    }
+  */
+  @ApiOperation({ summary: 'запрос для получения данных о пользователе' })
   @Get("/getUserInfo")
-  getUserInfo( @Headers('token')token: string):any{
-    return this.appService.getUserInfo( token)
+  getUserInfo(@Headers('token') token: string): any {
+    return this.appService.getUserInfo(token)
   }
 
-  @ApiOperation({ summary: 'запрос для получения данных о рекаламе'})
+  @ApiOperation({ summary: 'запрос для получения данных о рекаламе' })
   @Get("/getAddList")
-  getAddList( ):any{
-    return this.appService.getAddList( )
+  getAddList(): any {
+    return this.appService.getAddList()
   }
 
-  @ApiOperation({ summary: 'запрос для получения данных об аватаре пользователя'})
+  @ApiOperation({ summary: 'запрос для получения данных об аватаре пользователя' })
   @Get("/getUserAvatar")
-  getUserAvatar( @Headers('token')token: string):any{
-    return this.appService.getUserAvatar( token)
+  getUserAvatar(@Headers('token') token: string): any {
+    return this.appService.getUserAvatar(token)
   }
 
-  @ApiOperation({ summary: 'запрос для изменения аватара пользователя'})
+  @ApiOperation({ summary: 'запрос для изменения аватара пользователя' })
   @ApiBody({
-    schema:{
-      type:"object",
-      properties:{
-        img:{
-          type:"string"
+    schema: {
+      type: "object",
+      properties: {
+        img: {
+          type: "string"
         }
       }
 
@@ -484,29 +488,29 @@ getLastUUID(@Headers('token') token: string):any{
   })
 
   @Post("/postUserAvatar")
-  postUserAvatar( @Headers('token')token: string,  @Body() body:any):any{
-    return this.appService.postUserAvatar( token, body)
+  postUserAvatar(@Headers('token') token: string, @Body() body: any): any {
+    return this.appService.postUserAvatar(token, body)
   }
 
-@ApiOperation({ summary: 'запрос для получения списка пользователей в чате' })
+  @ApiOperation({ summary: 'запрос для получения списка пользователей в чате' })
   @Get("/getChatList")
-  getListUsers(@Headers('token') token: string):any{
+  getListUsers(@Headers('token') token: string): any {
     return this.appService.getListUsers(token)
   }
 
 
-// @ApiOperation({ summary: 'запрос для получения списка доставщиков' })
-//  @Get("/getListDeliveryman")
-//   getListDeliveryman(@Headers('token') token: string):any{
-//     return this.appService.getListDeliveryman(token)
-//   }
+  // @ApiOperation({ summary: 'запрос для получения списка доставщиков' })
+  //  @Get("/getListDeliveryman")
+  //   getListDeliveryman(@Headers('token') token: string):any{
+  //     return this.appService.getListDeliveryman(token)
+  //   }
 
   @ApiOperation({ summary: 'запрос для получения данных трека на карте' })
- @Get("/getPoints")
-  getPoints():any{
+  @Get("/getPoints")
+  getPoints(): any {
     return [
-    [60.008182, 29.723190],
-    [59.928842, 34.123707]
+      [60.008182, 29.723190],
+      [59.928842, 34.123707]
     ]
   }
 
@@ -514,22 +518,22 @@ getLastUUID(@Headers('token') token: string):any{
   @ApiOperation({ summary: 'запрос для отправки сообщения' })
   @Post("/postMessage")
   @ApiBody({
-    schema:{
-      type:"object",
-      properties:{
-        msg:{
-          type:"string"
+    schema: {
+      type: "object",
+      properties: {
+        msg: {
+          type: "string"
         },
-        id:{
-            type:"string"
+        id: {
+          type: "string"
         }
       }
 
     }
   })
-   postMessage(@Headers('token') token: string, @Body() body:any):any{
-        return this.appService.postMessage(token,body)
-   }
+  postMessage(@Headers('token') token: string, @Body() body: any): any {
+    return this.appService.postMessage(token, body)
+  }
 
 
   // @ApiOperation({ summary: 'запрос для отправки сообщения доставщику' })
@@ -553,29 +557,28 @@ getLastUUID(@Headers('token') token: string):any{
   //  }
 
   @Delete("/deletePackages")
-  deletePackages( @Headers('token')token: string):any{
-    return this.appService.deletePackages( token)
+  deletePackages(@Headers('token') token: string): any {
+    return this.appService.deletePackages(token)
   }
 
 
   @Delete("/deleteBalance")
-  deleteBalance( @Headers('token')token: string):any{
-    return this.appService.deleteBalance( token)
+  deleteBalance(@Headers('token') token: string): any {
+    return this.appService.deleteBalance(token)
   }
 
   @Delete("/clearUser")
-  clearUser( @Headers('token')token: string):any{
-    return this.appService.clearUser( token)
+  clearUser(@Headers('token') token: string): any {
+    return this.appService.clearUser(token)
   }
 
   @Delete("/clearUserChat")
-  clearUserChat( @Headers('token')token: string):any{
-    return this.appService.clearUserChat( token)
+  clearUserChat(@Headers('token') token: string): any {
+    return this.appService.clearUserChat(token)
   }
 
   @Delete("/deleteUser")
-  deleteUser( @Headers('token')token: string):any{
-    return this.appService.deleteUser( token)
+  deleteUser(@Headers('token') token: string): any {
+    return this.appService.deleteUser(token)
   }
-  
 }
