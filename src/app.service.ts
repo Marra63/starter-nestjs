@@ -2,15 +2,50 @@ import { Injectable } from '@nestjs/common';
 import * as DATA from "./data.json";
 //import * as DELIVERYMAN from "./deliverymen.json";
 import * as fs from 'fs';
-import * as USERS from "./users.json"
+//import * as USERS from "./users.json"
 import { v4 as uuidv4 } from 'uuid';
 import { TokenGenerator, TokenBase } from 'ts-token-generator';
+import { Socket, Server } from 'socket.io';
+//import { AppGateway } from "../src/api/socket";
+import {
+  SubscribeMessage,
+  WebSocketGateway,
+  OnGatewayInit,
+  WebSocketServer,
+  OnGatewayConnection,
+  OnGatewayDisconnect,
+} from '@nestjs/websockets';
 
+
+
+import socketIO from 'socket.io'
+import http from 'http'
+
+@WebSocketGateway({
+    cors: {
+        origin: '*',
+    },
+})
 @Injectable()
-export class AppService {
+export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect{
 
+    @WebSocketServer() server: Server;
 
+    afterInit(server: Server) {
+        //console.log(server);
+        console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+        //Выполняем действия
+    }
 
+    handleDisconnect(client: Socket) {
+        console.log(`Disconnected: ${client.id}`);
+        //Выполняем действия
+    }
+
+    handleConnection(client: Socket, ...args: any[]) {
+        console.log(`Connected ${client.id}`);
+        //Выполняем действия
+    }
 
 
     getHello(): string {
@@ -182,6 +217,7 @@ export class AppService {
         } else {
             return { "message": "fault" }
         }
+        
     }
 
     //получение балнса пользователя
@@ -203,9 +239,9 @@ export class AppService {
             return g.token;
         }).indexOf(token);
 
+        console.log(Array.isArray(body.delivery_details), body.delivery_details)
         //если есть все неоюхожимые параметры, то вохвращается UUID
-        if (
-            index !== -1 && body.origin_details && Array.isArray(body.delivery_details) && body.package_details && body.delivery_details.length!=0 &&
+        if (index !== -1 && body.origin_details && Array.isArray(body.delivery_details) && body.package_details && body.delivery_details.length!=0 &&
             body.origin_details.address != "" && body.origin_details.country != "" && body.origin_details.phone != "" &&
             Number(body.package_details.weight) && body.package_details.items != "" && Number(body.package_details.price)
 
@@ -429,6 +465,9 @@ export class AppService {
                 fs.writeFile('src/data.json', JSON.stringify(DATA), (err) => {
                     if (err) throw err;
                 });
+
+                this.server.emit("state was changed", params);
+
                 return { "message": "successful" }
             } else {
                 return { "message": "fault" }
@@ -819,6 +858,7 @@ export class AppService {
             fs.writeFile('src/data.json', JSON.stringify(DATA), (err) => {
                 if (err) throw err;
             });
+            this.server.emit("new message", [body, token])
             return { "message": "true" }
         } else
             return { "message": "false" }
