@@ -2,7 +2,7 @@ import {Body, Controller, Get, Post, Put, Query, Headers, Delete, Req} from '@ne
 import { AppService } from './app.service';
 import {ApiBody, ApiParam, ApiQuery, ApiTags, ApiOperation} from "@nestjs/swagger";
 import { Request } from 'express';
-положить сервер
+
 
 @ApiTags("Профессионалы")
 @Controller()
@@ -43,7 +43,7 @@ export class AppController {
   }
 
 
-
+/*
   @ApiBody({
     schema: {
       type: 'object',
@@ -577,4 +577,5 @@ getLastUUID(@Headers('token') token: string):any{
   deleteUser( @Headers('token')token: string):any{
     return this.appService.deleteUser( token)
   }
+  */
 }
