@@ -44,31 +44,31 @@ export class AppController {
 
 
 
-//   @ApiBody({
-//     schema: {
-//       type: 'object',
-//       properties: {
-//         email: {
-//           type: 'string',
-//           description: 'email',
-//         },
-//         password: {
-//           type: 'string',
-//           description: 'password'
-//         }
-//       }
-//     }
-//   })
-//   @ApiOperation({ summary: 'авторизация пользователя гугл' })
-//   @Post("/googleAuth")
-//   googleAuth(@Body() params: any):any{
-//     //console.log(params)
-//     var regexp = new RegExp('gmail')
-//     if(regexp.test(params.email))
-//       return this.appService.checkPassword(params);
-//     else
-//       return {"message":"fail email"}
-//   }
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        email: {
+          type: 'string',
+          description: 'email',
+        },
+        password: {
+          type: 'string',
+          description: 'password'
+        }
+      }
+    }
+  })
+  @ApiOperation({ summary: 'авторизация пользователя гугл' })
+  @Post("/googleAuth")
+  googleAuth(@Body() params: any):any{
+    //console.log(params)
+    var regexp = new RegExp('gmail')
+    if(regexp.test(params.email))
+      return this.appService.checkPassword(params);
+    else
+      return {"message":"fail email"}
+  }
 
 
 //   @ApiOperation({ summary: 'регистрация нового пользователя' })
