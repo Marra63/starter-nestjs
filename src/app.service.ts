@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as DATA from "./data.json";
 //import * as DELIVERYMAN from "./deliverymen.json";
 import * as fs from 'fs';
-//import * as USERS from "./users.json"
+import * as USERS from "./users.json"
 import { v4 as uuidv4 } from 'uuid';
 import { TokenGenerator, TokenBase } from 'ts-token-generator';
 
