@@ -1,0 +1,22 @@
+{
+
+  "1": {
+    "name": "Nick",
+    "surname": "",
+    "patronymic": "Ivanov",
+    "phone": "+7-(777)-777-77-80",
+    "messages": [
+
+    ],
+    "img": ""
+  },
+    "2": {
+    "name": "John",
+    "surname": "Smith",
+    "patronymic": "Ivanov",
+    "phone": "+7-(777)-777-77-81",
+    "messages": [
+    ],
+    "img": ""
+  }
+}
