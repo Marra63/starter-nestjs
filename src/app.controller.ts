@@ -14,10 +14,10 @@ export class AppController {
   //   return this.appService.getHello();
   // }
 
-  @Get("/getAll")
-  getAll():string{
-    return this.appService.getAll();
-  }
+  // @Get("/getAll")
+  // getAll():string{
+  //   return this.appService.getAll();
+  // }
 
 
   @ApiBody({
