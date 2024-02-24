@@ -13,15 +13,15 @@ export class AppController {
   constructor(private readonly appService: AppService) { }
   
 
-  @Get()
-  getHello(): string {
-    return "this.appService.getHello();"
-  }
+  // @Get()
+  // getHello(): string {
+  //   return "this.appService.getHello();"
+  // }
 
-  @Get("/getAll")
-  getAll(): string {
-    return this.appService.getAll();
-  }
+  // @Get("/getAll")
+  // getAll(): string {
+  //   return this.appService.getAll();
+  // }
 
 
   @ApiBody({
@@ -556,29 +556,29 @@ export class AppController {
   //       return this.appService.postMessageToDeliveryman(token,body)
   //  }
 
-  @Delete("/deletePackages")
-  deletePackages(@Headers('token') token: string): any {
-    return this.appService.deletePackages(token)
-  }
+  // @Delete("/deletePackages")
+  // deletePackages(@Headers('token') token: string): any {
+  //   return this.appService.deletePackages(token)
+  // }
 
 
-  @Delete("/deleteBalance")
-  deleteBalance(@Headers('token') token: string): any {
-    return this.appService.deleteBalance(token)
-  }
+  // @Delete("/deleteBalance")
+  // deleteBalance(@Headers('token') token: string): any {
+  //   return this.appService.deleteBalance(token)
+  // }
 
-  @Delete("/clearUser")
-  clearUser(@Headers('token') token: string): any {
-    return this.appService.clearUser(token)
-  }
+  // @Delete("/clearUser")
+  // clearUser(@Headers('token') token: string): any {
+  //   return this.appService.clearUser(token)
+  // }
 
-  @Delete("/clearUserChat")
-  clearUserChat(@Headers('token') token: string): any {
-    return this.appService.clearUserChat(token)
-  }
+  // @Delete("/clearUserChat")
+  // clearUserChat(@Headers('token') token: string): any {
+  //   return this.appService.clearUserChat(token)
+  // }
 
-  @Delete("/deleteUser")
-  deleteUser(@Headers('token') token: string): any {
-    return this.appService.deleteUser(token)
-  }
+  // @Delete("/deleteUser")
+  // deleteUser(@Headers('token') token: string): any {
+  //   return this.appService.deleteUser(token)
+  // }
 }
