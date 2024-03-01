@@ -212,7 +212,7 @@ export class AppController {
     }
   })
   @Put("/changePassword")
-  changePassword(@Query() body: any): any {
+  changePassword(@Body() body: any): any {
     return this.appService.changePassword(body)
   }
 
