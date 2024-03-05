@@ -204,10 +204,12 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
 
     //сервер получает пароль и почту, и меняет его
     changePassword(body: any): any {
+
         const index = DATA.map((g) => {
             return g.email;
         }).indexOf(body.email);
 
+        console.log(body);
         if (index !== -1 && DATA[index].valid_code == body.valid_code) {
             DATA[index].password = body.password
             fs.writeFile('src/data.json', JSON.stringify(DATA), (err) => {
@@ -215,6 +217,8 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
             });
             return { "message": "success" }
         } else {
+            console.log(DATA[index].valid_code);
+            console.log(body.valid_code);
             return { "message": "fault" }
         }
         
@@ -277,7 +281,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
                 DATA[index].list_payment.push(
                     {
                         "type": "pay",
-                        "sum": 3001,
+                        "sum": "3001",
                         "date": `${day}.${month}.${year}`,
                         "smt": ""
                     }
@@ -286,7 +290,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
                 DATA[index].list_payment = [
                     {
                         "type": "pay",
-                        "sum": 3001,
+                        "sum": "3001",
                         "date": `${day}.${month}.${year}`,
                         "smt": ""
                     }
@@ -319,6 +323,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
             const index_package = DATA[index].packages.map((g) => {
                 return g.id;
             }).indexOf(params.uuid);
+
             if (index_package !== -1) {
                 DATA[index].packages[index_package].charges.delivery = body.charges.delivery
                 DATA[index].packages[index_package].charges.tax_and_service = body.charges.tax_and_service
@@ -333,7 +338,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
                     DATA[index].list_payment.push(
                         {
                             "type": "pay",
-                            "sum": params.price,
+                            "sum":  `${params.price}`,
                             "date": `${day}.${month}.${year}`,
                             "smt": ""
                         }
@@ -342,7 +347,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
                     DATA[index].list_payment = [
                         {
                             "type": "pay",
-                            "sum": params.price,
+                            "sum":  `${params.price}`,
                             "date": `${day}.${month}.${year}`,
                             "smt": ""
                         }
@@ -407,7 +412,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
                 DATA[index].list_payment.push(
                     {
                         "type": "add",
-                        "sum": params.price,
+                        "sum":  `${params.price}`,
                         "date": `${day}.${month}.${year}`,
                         "smt": ""
                     }
@@ -416,7 +421,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
                 DATA[index].list_payment = [
                     {
                         "type": "pay",
-                        "sum": params.price,
+                        "sum":  `${params.price}`,
                         "date": `${day}.${month}.${year}`,
                         "smt": ""
                     }
