@@ -1,0 +1,575 @@
+[
+    {
+        "token": "user1prof",
+        "name": "wsr_user_1",
+        "email": "adtspb.mad.user01@gmail.com",
+        "phone": "+7-(777)-777-77-77",
+        "valid_code": 879233,
+        "balance": 0,
+        "img": "",
+        "password": "111",
+        "packages": [
+        ],
+        "list_payment": [
+            
+        ],
+        "chat": {
+            "1": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-77",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.user01@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_2707.jpg"
+            },
+            "2": {
+                "name": "Ivan",
+                "surname": "Ivanovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-78",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.user01@gmail.com",
+                        "message": "my name Ivan"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1073.jpg"
+            },
+            "3": {
+                "name": "Petr",
+                "surname": "Petrovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-79",
+                "messages": [
+                    {
+                        "from": "3",
+                        "to": "adtspb.mad.user01@gmail.com",
+                        "message": "my name Petr"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5932.jpg"
+            }
+        }
+    },
+    {
+        "token": "user2prof",
+        "name": "user2",
+        "phone": "+7-(777)-777-77-77",
+        "email": "adtspb.mad.user02@gmail.com",
+        "password": "111",
+        "balance": 0,
+        "img": "",
+        "chat": {
+            "1": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-77",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.user02@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_2707.jpg"
+            },
+            "2": {
+                "name": "Ivan",
+                "surname": "Ivanovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-78",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.user02@gmail.com",
+                        "message": "my name Ivan"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1073.jpg"
+            },
+            "3": {
+                "name": "Petr",
+                "surname": "Petrovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-79",
+                "messages": [
+                    {
+                        "from": "3",
+                        "to": "adtspb.mad.user02@gmail.com",
+                        "message": "my name Petr"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5932.jpg"
+            }
+        }
+    },
+    {
+        "token": "user3prof",
+        "name": "user3",
+        "email": "adtspb.mad.user03@gmail.com",
+        "password": "111",
+        "phone": "+7-(777)-777-77-77",
+        "valid_code": 0,
+        "balance": 0,
+        "img": "",
+        "list_payment": [],
+        "packages": [],
+        "chat": {
+            "1": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-77",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.user03@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_2707.jpg"
+            },
+            "2": {
+                "name": "Ivan",
+                "surname": "Ivanovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-78",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.user03@gmail.com",
+                        "message": "my name Ivan"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1073.jpg"
+            },
+            "3": {
+                "name": "Petr",
+                "surname": "Petrovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-79",
+                "messages": [
+                    {
+                        "from": "3",
+                        "to": "adtspb.mad.user03@gmail.com",
+                        "message": "my name Petr"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5932.jpg"
+            }
+        }
+    },
+    {
+        "token": "user4prof",
+        "name": "user4prof",
+        "email": "adtspb.mad.user04@gmail.com",
+        "password": "111",
+        "phone": "+7-(777)-777-77-77",
+        "valid_code": 0,
+        "balance": 0,
+        "img": "",
+        "list_payment": [],
+        "packages": [],
+        "chat": {
+            "1": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-77",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.user04@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_2707.jpg"
+            },
+            "2": {
+                "name": "Ivan",
+                "surname": "Ivanovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-78",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.user04@gmail.com",
+                        "message": "my name Ivan"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1073.jpg"
+            },
+            "3": {
+                "name": "Petr",
+                "surname": "Petrovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-79",
+                "messages": [
+                    {
+                        "from": "3",
+                        "to": "adtspb.mad.user04@gmail.com",
+                        "message": "my name Petr"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5932.jpg"
+            }
+        }
+    },
+    {
+        "name": "user5",
+        "phone": "+7-(777)-777-77-77",
+        "email": "adtspb.mad.user05@gmail.com",
+        "password": "111",
+        "token": "user5prof",
+        "balance": 0,
+        "img": "",
+        "chat": {
+            "1": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-77",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.user05@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_2707.jpg"
+            },
+            "2": {
+                "name": "Ivan",
+                "surname": "Ivanovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-78",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.user05@gmail.com",
+                        "message": "my name Ivan"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1073.jpg"
+            },
+            "3": {
+                "name": "Petr",
+                "surname": "Petrovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-79",
+                "messages": [
+                    {
+                        "from": "3",
+                        "to": "adtspb.mad.user05@gmail.com",
+                        "message": "my name Petr"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5932.jpg"
+            }
+        }
+    },
+    {
+        "name": "user6",
+        "phone": "+7-(777)-777-77-77",
+        "email": "adtspb.mad.user06@gmail.com",
+        "password": "111",
+        "token": "user6prof",
+        "balance": 0,
+        "img": "",
+        "chat": {
+            "1": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-77",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.user06@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/vizsla/n02100583_2707.jpg"
+            },
+            "2": {
+                "name": "Ivan",
+                "surname": "Ivanovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-78",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.user06@gmail.com",
+                        "message": "my name Ivan"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_1073.jpg"
+            },
+            "3": {
+                "name": "Petr",
+                "surname": "Petrovich",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-79",
+                "messages": [
+                    {
+                        "from": "3",
+                        "to": "adtspb.mad.user06@gmail.com",
+                        "message": "my name Petr"
+                    }
+                ],
+                "img": "https://images.dog.ceo/breeds/samoyed/n02111889_5932.jpg"
+            }
+        }
+    },
+    {
+        "token": "asdf",
+        "name": "wsr_deliveryman_1",
+        "email": "adtspb.mad.deliveryman01@gmail.com",
+        "phone": "+7-(777)-777-77-77",
+        "valid_code": 879233,
+        "balance": 0,
+        "img": "string",
+        "password": "111",
+        "packages": [],
+        "list_payment": [],
+        "chat": {
+            "1": {
+                "name": "Nick",
+                "surname": "Petrov",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-80",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.deliveryman01@gmail.com",
+                        "message": "my name Nick"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/2bc94b9eec2d00f5d28110ba191da896/tumblr_nyled8DYKd1qg9kado1_1280.jpg"
+            },
+            "2": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-81",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.deliveryman01@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/75f7f5ba97da53c61026fe6cad16c97c/tumblr_o8h7llrbDt1rzz2who1_1280.jpg"
+            }
+        }
+    },
+    {
+        "token": "deliveryman2prof",
+        "name": "deliveryman2",
+        "phone": "+7-(777)-777-77-77",
+        "email": "adtspb.mad.deliveryman02@gmail.com",
+        "password": "222",
+        "balance": 0,
+        "img": "",
+        "chat": {
+            "1": {
+                "name": "Nick",
+                "surname": "Petrov",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-80",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.deliveryman02@gmail.com",
+                        "message": "my name Nick"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/2bc94b9eec2d00f5d28110ba191da896/tumblr_nyled8DYKd1qg9kado1_1280.jpg"
+            },
+            "2": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-81",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.deliveryman02@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/75f7f5ba97da53c61026fe6cad16c97c/tumblr_o8h7llrbDt1rzz2who1_1280.jpg"
+            }
+        }
+    },
+    {
+        "token": "deliveryman3prof",
+        "name": "deliveryman3",
+        "email": "adtspb.mad.deliveryman03@gmail.com",
+        "password": "222",
+        "phone": "+7-(777)-777-77-77",
+        "valid_code": 0,
+        "balance": 0,
+        "img": "",
+        "list_payment": [],
+        "packages": [],
+        "chat": {
+            "1": {
+                "name": "Nick",
+                "surname": "Petrov",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-80",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.deliveryman03@gmail.com",
+                        "message": "my name Nick"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/2bc94b9eec2d00f5d28110ba191da896/tumblr_nyled8DYKd1qg9kado1_1280.jpg"
+            },
+            "2": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-81",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.deliveryman03@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/75f7f5ba97da53c61026fe6cad16c97c/tumblr_o8h7llrbDt1rzz2who1_1280.jpg"
+            }
+        }
+    },
+    {
+        "token": "deliveryman4prof",
+        "name": "deliveryman4prof",
+        "email": "adtspb.mad.deliveryman04@gmail.com",
+        "password": "111",
+        "phone": "+7-(777)-777-77-77",
+        "valid_code": 0,
+        "balance": 0,
+        "img": "",
+        "list_payment": [],
+        "packages": [],
+        "chat": {
+            "1": {
+                "name": "Nick",
+                "surname": "Petrov",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-80",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.deliveryman04@gmail.com",
+                        "message": "my name Nick"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/2bc94b9eec2d00f5d28110ba191da896/tumblr_nyled8DYKd1qg9kado1_1280.jpg"
+            },
+            "2": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-81",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.deliveryman04@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/75f7f5ba97da53c61026fe6cad16c97c/tumblr_o8h7llrbDt1rzz2who1_1280.jpg"
+            }
+        }
+    },
+    {
+        "name": "deliveryman5",
+        "phone": "+7-(777)-777-77-77",
+        "email": "adtspb.mad.deliveryman05@gmail.com",
+        "password": "222",
+        "token": "deliveryman5prof",
+        "balance": 0,
+        "img": "",
+        "chat": {
+            "1": {
+                "name": "Nick",
+                "surname": "Petrov",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-80",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.deliveryman05@gmail.com",
+                        "message": "my name Nick"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/2bc94b9eec2d00f5d28110ba191da896/tumblr_nyled8DYKd1qg9kado1_1280.jpg"
+            },
+            "2": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-81",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.deliveryman05@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/75f7f5ba97da53c61026fe6cad16c97c/tumblr_o8h7llrbDt1rzz2who1_1280.jpg"
+            }
+        }
+    },
+    {
+        "name": "deliveryman6",
+        "phone": "+7-(777)-777-77-77",
+        "email": "adtspb.mad.deliveryman06@gmail.com",
+        "password": "222",
+        "token": "deliveryman6prof",
+        "balance": 0,
+        "img": "",
+        "chat": {
+            "1": {
+                "name": "Nick",
+                "surname": "Petrov",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-80",
+                "messages": [
+                    {
+                        "from": "1",
+                        "to": "adtspb.mad.deliveryman06@gmail.com",
+                        "message": "my name Nick"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/2bc94b9eec2d00f5d28110ba191da896/tumblr_nyled8DYKd1qg9kado1_1280.jpg"
+            },
+            "2": {
+                "name": "John",
+                "surname": "Smith",
+                "patronymic": "Ivanov",
+                "phone": "+7-(777)-777-77-81",
+                "messages": [
+                    {
+                        "from": "2",
+                        "to": "adtspb.mad.deliveryman06@gmail.com",
+                        "message": "my name John"
+                    }
+                ],
+                "img": "http://78.media.tumblr.com/75f7f5ba97da53c61026fe6cad16c97c/tumblr_o8h7llrbDt1rzz2who1_1280.jpg"
+            }
+        }
+    }
+]
