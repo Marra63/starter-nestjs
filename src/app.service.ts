@@ -82,6 +82,7 @@ export class AppService  implements OnGatewayInit, OnGatewayConnection, OnGatewa
         body.token = tokgen.generate();
         body.balance = 0
         body.img = ""
+      body.packages = []
         body.chat = {
 
             "1": {
