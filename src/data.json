@@ -65,6 +65,8 @@
         "email": "adtspb.mad.user02@gmail.com",
         "password": "111",
         "balance": 0,
+         "packages": [
+        ],
         "img": "",
         "chat": {
             "1": {
@@ -231,6 +233,8 @@
         "token": "user5prof",
         "balance": 0,
         "img": "",
+         "packages": [
+        ],
         "chat": {
             "1": {
                 "name": "John",
